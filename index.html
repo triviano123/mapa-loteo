@@ -1,57 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Mapa del Desarrollo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Leaflet -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-  </script>
+  <meta charset="utf-8">
+  <title>Mapa Loteo</title>
 
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
     }
-    #map {
+
+    #contenedor {
+      position: relative;
+      width: 100%;
+    }
+
+    #plano {
+      width: 100%;
+      display: block;
+    }
+
+    #svg-lotes {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background: #f5f5f5;
     }
-  </style>
-</head>
-<<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Mapa de Lotes</title>
-
-  <style>
-    #contenedor {
-  position: relative;
-  width: 100%;
-}
-
-#plano {
-  width: 100%;
-  display: block;
-}
-
-#svg-lotes {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
   </style>
 </head>
 
@@ -62,38 +36,11 @@
     <svg id="svg-lotes"
          viewBox="0 0 1080 1920"
          preserveAspectRatio="xMidYMid meet">
-         
-      <rect x="200" y="200" width="300" height="150"
+
+      <rect x="500" y="500" width="400" height="250"
             fill="red" opacity="0.5" />
+
     </svg>
   </div>
-</body>
-</html>
->
-
-<div id="map"></div>
-
-<script>
-  // Dimensiones internas del plano (ajustables luego)
-  const width = 1080;
-  const height = 1920;
-
-  // Mapa sin coordenadas reales
-  const map = L.map('map', {
-    crs: L.CRS.Simple,
-    minZoom: -1,
-    maxZoom: 2
-  });
-
-  // Límites del mapa
-  const bounds = [[0, 0], [height, width]];
-
-  // Imagen de fondo (placeholder)
-  L.imageOverlay('plano.png', bounds).addTo(map);
-
-  map.fitBounds(bounds);
-
-</script>
-
 </body>
 </html>
