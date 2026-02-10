@@ -27,7 +27,53 @@
     }
   </style>
 </head>
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Lotes</title>
+
+  <style>
+    #mapa {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    #plano {
+      width: 100%;
+      display: block;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .lote {
+      fill: rgba(0, 0, 255, 0.3);
+      stroke: blue;
+      stroke-width: 2;
+    }
+  </style>
+</head>
+
 <body>
+
+  <div id="mapa">
+    <img src="plano.png" id="plano">
+    
+    <svg id="overlay" viewBox="0 0 1000 600">
+      <!-- ACÁ VAN LOS POLÍGONOS -->
+    </svg>
+  </div>
+
+</body>
+</html>
+>
 
 <div id="map"></div>
 
